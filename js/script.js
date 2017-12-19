@@ -1,158 +1,214 @@
-// A javascript-enhanced crossword puzzle [c] Jesse Weisbeck, MIT/GPL 
+// A javascript-enhanced crossword puzzle [c] Jesse Weisbeck, MIT/GPL
 (function($) {
 	$(function() {
 		// provide crossword entries in an array of objects like the following example
-		// Position refers to the numerical order of an entry. Each position can have 
+		// Position refers to the numerical order of an entry. Each position can have
 		// two entries: an across entry and a down entry
 		var puzzleData = [
 			 	{
-					clue: "First letter of greek alphabet",
-					answer: "alpha",
+					clue: "Where two carpenters meet",
+					answer: "joint",
 					position: 1,
 					orientation: "across",
-					startx: 1,
+					startx: 2,
 					starty: 1
 				},
 			 	{
-					clue: "Not a one ___ motor, but a three ___ motor",
-					answer: "phase",
-					position: 3,
+					clue: "Fabulous sounding lysosomal storage disorder",
+					answer: "fabry",
+					position: 5,
 					orientation: "across",
-					startx: 7,
-					starty: 1
+					startx: 9,
+					starty: 2
 				},
 				{
-					clue: "Created from a separation of charge",
-					answer: "capacitance",
-					position: 5,
+					clue: "That's a sore spot",
+					answer: "ulcer",
+					position: 8,
 					orientation: "across",
 					startx: 1,
 					starty: 3
 				},
 				{
-					clue: "The speeds of engines without and accelaration",
-					answer: "idlespeeds",
-					position: 8,
+					clue: "Testosterone deficiency",
+					answer: "hypogonadism",
+					position: 9,
 					orientation: "across",
-					startx: 1,
-					starty: 5
+					startx: 6,
+					starty: 4
 				},
 				{
-					clue: "Complex resistances",
-					answer: "impedances",
-					position: 10,
-					orientation: "across",	
-					startx: 2,
-					starty: 7
-				},
-				{
-					clue: "This device is used to step-up, step-down, and/or isolate",
-					answer: "transformer",
+					clue: "The website for healthcare professionals",
+					answer: "epgonline",
 					position: 13,
 					orientation: "across",
 					startx: 1,
+					starty: 7
+				},
+				{
+					clue: "Laughter is cheap what?",
+					answer: "medicine",
+					position: 14,
+					orientation: "across",
+					startx: 11,
+					starty: 7
+				},
+				{
+					clue: "It'd be criminal not to test it",
+					answer: "trial",
+					position: 16,
+					orientation: "across",
+					startx: 7,
 					starty: 9
 				},
 				{
-					clue: "Type of ray emitted frm the sun",
-					answer: "gamma",
-					position: 16,
-					orientation: "across",
-					startx: 1,
-					starty: 11
-				},
-				{
-					clue: "C programming language operator",
-					answer: "cysan",
+					clue: "17",
+					answer: "atrial line",
 					position: 17,
 					orientation: "across",
-					startx: 7,
+					startx: 11,
+					starty: 10
+				},
+				{
+					clue: "Unique Levis",
+					answer: "genes",
+					position: 19,
+					orientation: "across",
+					startx: 1,
 					starty: 11
 				},
 				{
-					clue: "Defines the alpha-numeric characters that are typically associated with text used in programming",
-					answer: "ascii",
-					position: 1,
-					orientation: "down",
-					startx: 1,
-					starty: 1
+					clue: "Everyone has to wear it",
+					answer: "skin",
+					position: 21,
+					orientation: "across",
+					startx: 13,
+					starty: 12
 				},
 				{
-					clue: "Generally, if you go over 1kV per cm this happens",
-					answer: "arc",
+					clue: "This study makes me nervous",
+					answer: "neurology",
+					position: 22,
+					orientation: "across",
+					startx: 1,
+					starty: 13
+				},
+				{
+					clue: "Skin-, blood-, driving-",
+					answer: "test",
+					position: 6,
+					orientation: "across",
+					startx: 16,
+					starty: 13
+				},
+				{
+					clue: "Cover 2/3 of the planet",
+					answer: "Saline",
+					position: 24,
+					orientation: "across",
+					startx: 11,
+					starty: 14
+				},
+				{
+					clue: "Studying the Big C",
+					answer: "oncology",
 					position: 2,
 					orientation: "down",
-					startx: 5,
+					startx: 3,
 					starty: 1
 				},
 				{
-					clue: "Control system strategy that tries to replicate the human through process (abbr.)",
-					answer: "ann",
-					position: 4,
+					clue: "Shock of a lifetime (abbr.)",
+					answer: "af",
+					position: 3,
 					orientation: "down",
 					startx: 9,
 					starty: 1
 				},
 				{
-					clue: "Greek variable that usually describes rotor positon",
-					answer: "theta",
-					position: 6,
+					clue: "Flesh and bones",
+					answer: "muskuloskeletal",
+					position: 4,
 					orientation: "down",
-					startx: 7,
-					starty: 3
+					startx: 20,
+					starty: 1
 				},
 				{
-					clue: "Electromagnetic (abbr.)",
-					answer: "em",
+					clue: "Mind over matter",
+					answer: "psychiatry",
+					position: 5,
+					orientation: "down",
+					startx: 7,
+					starty: 2
+				},
+				{
+					clue: "Almost identicals",
+					answer: "biosimilars",
 					position: 7,
 					orientation: "down",
 					startx: 11,
-					starty: 3
-				},
+					starty: 2
+				}
 				{
-					clue: "No. 13 across does this to a voltage",
-					answer: "steps",
-					position: 9,
+					clue: "Posh people are warm, at least?",
+					answer: "common cold",
+					position: 8,
+					orientation: "down",
+					startx: 17,
+					starty: 2
+				}
+				{
+					clue: "Sit still and pay attention!(abbr.)",
+					answer: "biosimilars",
+					position: 7,
+					orientation: "down",
+					startx: 11,
+					starty: 2
+				}
+				{
+					clue: "Early jab",
+					answer: "inoculation",
+					position: 12,
+					orientation: "down",
+					startx: 15,
+					starty: 4
+				}
+				{
+					clue: "Give away your kebab",
+					answer: "doner",
+					position:13,
 					orientation: "down",
 					startx: 5,
 					starty: 5
-				},
+				}
 				{
-					clue: "Emits a lout wailing sound",
-					answer: "siren",
-					position: 11,
-					orientation: "down",
-					startx: 11,
-					starty: 7
-				},
-				{
-					clue: "Information technology (abbr.)",
-					answer: "it",
-					position: 12,
-					orientation: "down",
-					startx: 1,
-					starty: 8
-				},
-				{
-					clue: "Asynchronous transfer mode (abbr.)",
-					answer: "atm",
+					clue: "999",
+					answer: "emergency",
 					position: 14,
 					orientation: "down",
-					startx: 3,
-					starty: 9
-				},
-				{
-					clue: "Offset current control (abbr.)",
-					answer: "occ",
-					position: 15,
-					orientation: "down",
-					startx: 7,
-					starty: 9
+					startx: 1,
+					starty: 7
 				}
-			] 
-	
+				{
+					clue: "Great outcome!",
+					answer: "result",
+					position: 18,
+					orientation: "down",
+					startx: 13,
+					starty: 10
+				}
+				{
+					clue: "Half-sister",
+					answer: "Cyst",
+					position: 20,
+					orientation: "down",
+					startx: 9,
+					starty: 12
+				}
+			]
+
 		$('#puzzle-wrapper').crossword(puzzleData);
-		
+
 	})
-	
+
 })(jQuery)
